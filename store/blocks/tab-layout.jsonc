@@ -1,0 +1,55 @@
+{
+    "tab-layout#desktop": {
+        "children": [
+            "tab-list#desktop", // Bloco filho de abas dos produto em desktop
+            "slider-layout#desktop", //  Bloco filho de "carrossel" de imagens dos produtos em desktop (blocos subsequentes descritos no arquivo "slider-layout.jsonc")
+            "tab-content#desktop" // Bloco filho de conteúdo das abas dos produtos em desktop
+        ]
+    },
+    "tab-list#desktop": {
+        "children": [
+            "tab-list.item#1", // Bloco filho da aba 1 dos produtos
+            "tab-list.item#2" // Bloco filho da aba 2 dos produtos
+        ]
+    },
+    "tab-content#desktop": {
+        "children": [
+            "tab-content.item#1", // Bloco filho de conteúdo da aba 1 dos produtos
+            "tab-content.item#2" // Bloco filho de conteúdo da aba 2 dos produtos
+        ]
+    },
+    "tab-list.item#1": {
+        "props": {
+            "tabId": "promocao", // ID de "linkagem" da aba 1 com o conteúdo 1
+            "label": "Promoção", // Nome da aba 1 dos produtos
+            "defaultActiveTab": true // Aba ativa por padrão
+        }
+    },
+    "tab-list.item#2": {
+        "props": {
+            "tabId": "corinthians", // ID de "linkagem" da aba 2 com o conteúdo 2
+            "label": "Corinthians" // Nome da aba 2 dos produtos
+        }
+    },
+    "tab-content.item#1": {
+        "children": [
+            "flex-layout.row#products" // Bloco filho de layout flex de linha dos produtos da aba 1 (blocos subsequentes descritos no arquivo "product.jsonc")
+        ],
+        "props": {
+            "tabId": "promocao" // ID de "linkagem" da aba 1 com o conteúdo 1
+        }
+    },
+    "tab-content.item#2": {
+        "children": [
+            "rich-text#2" // Bloco filho de conteúdo rich-text (provisório)
+        ],
+        "props": {
+            "tabId": "corinthians" // ID de "linkagem" da aba 2 com o conteúdo 2
+        }
+    },
+    "rich-text#2": {
+        "props": {
+            "text": "Vai Curinthians!!!" // Melhor time do Brasil!!!
+        }
+    }
+}

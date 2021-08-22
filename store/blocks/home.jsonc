@@ -1,15 +1,15 @@
 {
-  "store.home": { 
+  "store.home": {
     "blocks": [
-      "rich-text"
+      "flex-layout.row#tab-layout-desktop" // Bloco de layout flex de linha para desktop
     ]
   },
-  "rich-text": { 
-    "props": { 
-      "text": "VTEX Store Framework",
-      "textAlignment": "CENTER",
-      "textPosition": "CENTER",
-      "font": "t-heading-1"
-    }
+  "flex-layout.row#tab-layout-desktop": {
+    "props": {
+      "fullWidth": true // Propriedade que preenche o conteúdo em toda a largura da tela
+    },
+    "children": [
+      "tab-layout#desktop" // Bloco filho de layout de abas para desktop (blocos subsequentes descritos no arquivo "tab-layout.jsonc")
+    ]
   }
 }

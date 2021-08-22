@@ -1,26 +1,32 @@
 {
   "footer": {
-    "blocks": ["footer-layout.desktop", "footer-layout.mobile"]
-  },
-  "footer-layout.desktop": { 
-    "children": [
-      "flex-layout.row#footer"
+    "blocks": [
+      "footer-layout.desktop", // Bloco de layout de rodapé para desktop
+      "footer-layout.mobile" // Bloco de layout de rodapé para mobile
     ]
   },
-  "footer-layout.mobile": { 
+  "footer-layout.desktop": {
     "children": [
-      "flex-layout.row#footer"
+      "flex-layout.row#footer-desktop" // Bloco filho de layout flex de linha
     ]
   },
-  "flex-layout.row#footer": { 
-    "children": [
-      "image"
-    ]
-  },
-  "image": {
+  "flex-layout.row#footer-desktop": {
     "props": {
-      "width": 100,
-      "src": "https://brand.vtex.com/static/media/VTEX_pink_RGB.751a9fb5.svg"
+      "blockClass": "footer-desktop", // Classe exclusiva para customização em CSS
+      "fullWidth": true, // Propriedade que preenche o conteúdo em toda a largura da tela
+      "horizontalAlign": "center" // Propriedade que centraliza o conteúdo do bloco horizontalmente
+    },
+    "children": [
+      "flex-layout.col#login-desktop" // Bloco filho de layout flex de coluna para página de cadastro de clientes em desktop
+      // "flex-layout.col#challenges-desktop", // Bloco filho de layout flex de coluna para página de desafios em desktop
+      // "flex-layout.col#favorite-desktop" // Bloco filho de layout flex de coluna para página de favoritos em desktop
+      // "flex-layout.col#support-whatsapp-desktop" // Bloco filho de layout flex de coluna para página de suporte no whatsapp em desktop
+    ]
+  },
+  "flex-layout.col#login-desktop": {
+    "props": {
+      "width": "20%", // Largura da coluna flex de 20% da largura total da tela
+      "verticalAlign": "middle" // Propriedade que alinha o conteúdo vertical flex no meio
     }
   }
 }

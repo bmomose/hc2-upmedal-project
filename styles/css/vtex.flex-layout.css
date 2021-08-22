@@ -1,0 +1,9 @@
+.flexRowContent--header-desktop {
+    background-color: #212121;
+    height          : 85.5px;
+}
+
+.flexRowContent--footer-desktop {
+    background-color: #424242;
+    height          : 56px;
+}

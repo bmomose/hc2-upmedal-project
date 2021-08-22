@@ -1,79 +1,63 @@
 {
-  "header": {
-    "blocks": ["header-layout.desktop", "header-layout.mobile"]
-  },
   "header.full": {
-    "blocks": ["header-layout.desktop", "header-layout.mobile"]
+    "blocks": [
+      "header-layout.desktop", // Bloco de layout de cabeçalho para desktop
+      "header-layout.mobile" // Bloco de layout de cabeçalho para mobile
+    ]
   },
   "header-layout.desktop": {
     "children": [
-      "sticky-layout#desktop"
+      "flex-layout.row#header-desktop" // Bloco filho de layout flex de linha
     ]
   },
-  "sticky-layout#desktop": {
+  "flex-layout.row#header-desktop": {
     "props": {
-      "blockClass": "sticky-header"
-    },
-    "children": ["flex-layout.row#desktop"]
-  },
-  "flex-layout.row#desktop": {
-    "props": {
-      "horizontalAlign": "center",
-      "verticalAlign": "center",
-      "preventHorizontalStretch": true,
-      "preventVerticalStretch": true,
-      "fullWidth": true
+      "blockClass": "header-desktop", // Classe exclusiva para customização em CSS
+      "fullWidth": true // Propriedade que preenche o conteúdo em toda a largura da tela
     },
     "children": [
-      "flex-layout.col#logo-desktop",
-      "flex-layout.col#spacer",
-      "search-bar",
-      "locale-switcher",
-      "login",
-      "minicart.v2"
+      "flex-layout.col#logo-desktop", // Bloco filho de layout flex de coluna para a logomarca em desktop
+      "flex-layout.col#search-desktop", // Bloco filho de layout flex de coluna para o buscador em desktop
+      // "flex-layout.col#favorite-desktop" // Bloco filho de layout flex de coluna para o ícone de favoritos em desktop
+      "flex-layout.col#cart-desktop" // Bloco filho de layout flex de coluna para o carrinho de compras em desktop
     ]
-  },
-  "flex-layout.col#spacer": {
-    "props": {
-      "width": "grow"
-    }
   },
   "flex-layout.col#logo-desktop": {
     "props": {
-      "verticalAlign": "middle"
+      "width": "20%", // Largura da coluna flex de 20% da largura total da tela
+      "verticalAlign": "middle" // Propriedade que alinha o conteúdo vertical flex no meio
     },
-    "children": ["logo"]
-  },
-  "logo": {
-    "props": {
-      "title": "Logo",
-      "href": "/",
-      "url": "https://brand.vtex.com/static/media/VTEX_pink_RGB.751a9fb5.svg",
-      "width": "80"
-    }
-  },
-  "header-layout.mobile": {
-    "children": ["sticky-layout#mobile"]
-  },
-  "sticky-layout#mobile": {
-    "children": ["flex-layout.row#mobile"]
-  },
-  "flex-layout.row#mobile": {
     "children": [
-      "drawer",
-      "logo",
-      "flex-layout.col#spacer",
-      "login",
-      "minicart.v2"
-    ],
+      "logo#desktop" // Bloco filho de logomarca
+    ]
+  },
+  "logo#desktop": {
     "props": {
-      "blockClass": "main-header-mobile",
-      "preventHorizontalStretch": true,
-      "preserveLayoutOnMobile": true,
-      "fullWidth": true
+      "title": "Logo", // Texto alternativo caso a imagem não carregue
+      "href": "/", // URL da página direcionada caso clique na imagem
+      "url": "https://maratonavirtual.s3.sa-east-1.amazonaws.com/upmedal.png", // URL da fonte da logomarca
+      "width": "150" // Largura da imagem em desktop
     }
   },
-  "drawer": {
-    "children": []
+  "flex-layout.col#search-desktop": {
+    "props": {
+      "verticalAlign": "middle" // Propriedade que alinha o conteúdo vertical flex no meio
+    },
+    "children": [
+      "search-bar#desktop" // Bloco filho de buscador
+    ]
+  },
+  "search-bar#desktop": {
+    "props": {
+      "maxWidth": "550" // Largura máxima do buscador em desktop
+    }
+  },
+  "flex-layout.col#cart-desktop": {
+    "props": {
+      "verticalAlign": "middle" // Propriedade que alinha o conteúdo vertical flex no meio
+    },
+    "children": [
+      "minicart.v2" // Bloco filho de carrinho de compras
+    ]
   }
 }

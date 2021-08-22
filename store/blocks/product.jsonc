@@ -1,7 +1,47 @@
 {
   "store.product": {
+    "children": []
+  },
+  "flex-layout.row#products": {
     "children": [
-      
+      "list-context.product-list#promocao" // Bloco filho responsável por realizar a consulta GraphQL que busca a lista de produtos
+    ]
+  },
+  "list-context.product-list#promocao": {
+    "blocks": [
+      "product-summary.shelf#promocao" // Bloco responsável por resumir as informações exibidas dos produtos da prateleira
+    ],
+    "children": [
+      "slider-layout#products" // Bloco filho que exibirá os produtos no estilo "carrossel"
+    ],
+    "props": {
+      "category": "20", // Tipo da categoria de produtos que será exibida
+      "hideUnavailableItems": true, // Propriedade que esconderá produtos não disponíveis na prateleira
+      "blockClass": "products" // Classe exclusiva para customização em CSS
+    }
+  },
+  "slider-layout#products": {
+    "props": {
+      "itemsPerPage": {
+        "desktop": 3, // Quantidade de produtos que serão exibidas na tela para desktop
+        "tablet": 2, // Quantidade de produtos que serão exibidas na tela para tablet
+        "phone": 2 // Quantidade de produtos que serão exibidas na tela para smartphone
+      },
+      "infinite": true, // Loop do "carrosel" infinito
+      "showNavigationArrows": "false", // Propriedade que esconderá as setas de rolagem do "carrossel"
+      "blockClass": "products", // Classe exclusiva para customização em CSS
+      "autoplay": {
+        "timeout": 3000, // Rolagem automática do "carrossel" após 3 segundos
+        "stopOnHover": true // Para a rolagem quando o mouse estiver sobre o "carrossel"
+      }
+    }
+  },
+  "product-summary.shelf#promocao": {
+    "children": [
+      "product-summary-name", // Adiciona o nome do produto
+      "product-summary-image", // Adiciona a imagem do produto
+      "product-summary-price", // Adiciona o preço do produto
+      "add-to-cart-button" // Adiciona o botão para adicionar o produto ao carrinho de compras
     ]
   }
 }

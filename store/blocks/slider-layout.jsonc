@@ -1,0 +1,25 @@
+{
+    "slider-layout#desktop": {
+        "children": [
+            "image#featured-products1", // Bloco filho de imagem
+            "image#featured-products2" // Bloco filho de imagem
+        ],
+        "props": {
+            "itemsPerPage": {
+                "desktop": 1, // Quantidade de produtos que serão exibidas na tela para desktop
+                "tablet": 1, // Quantidade de produtos que serão exibidas na tela para tablet
+                "phone": 1 // Quantidade de produtos que serão exibidas na tela para smartphone
+            }
+        }
+    },
+    "image#featured-products1": {
+        "props": {
+            "src": "assets/banner-wood.png" // Fonte da imagem do produto 1
+        }
+    },
+    "image#featured-products2": {
+        "props": {
+            "src": "assets/grandes-guerreiros.png" // Fonte da imagem do produto 2
+        }
+    }
+}
